@@ -87,10 +87,9 @@ module.exports = (bot) => {
 
     const data = await getUserData(docId);
     if (!data) return ctx.reply("Помилка доступу до даних.");
-
-    // Зверніть увагу: я використовую data.sum, перевірте, чи так називається поле в базі після імпорту
     await ctx.reply(
-        `Ваші нарахування: **${formatCurrency(data.sum)} грн**`,
+        `Вироблено електроенергії: **${formatCurrency(data.electricity)} грн**\n` +
+        `Ваше нарахування: **${formatCurrency(data.sum)} грн**`,
         {parse_mode: "Markdown"},
     );
   });
