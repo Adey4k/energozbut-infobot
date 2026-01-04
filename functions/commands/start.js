@@ -88,8 +88,8 @@ module.exports = (bot) => {
     const data = await getUserData(docId);
     if (!data) return ctx.reply("Помилка доступу до даних.");
     await ctx.reply(
-        `Вироблено електроенергії: **${formatCurrency(data.electricity)} кВт\*г**\n` +
-        `Ваше нарахування: **${formatCurrency(data.sum)} грн**`,
+        `Вироблено електроенергії: \`${formatCurrency(data.electricity)} кВт⋅г\`\n` +
+        `Ваше нарахування: \`${formatCurrency(data.sum)} грн\``,
         {parse_mode: "Markdown"},
     );
   });
@@ -102,8 +102,8 @@ module.exports = (bot) => {
     if (!data) return ctx.reply("Помилка доступу до даних.");
 
     await ctx.reply(
-        `Податок ПДФО: **${formatCurrency(data.tax_fop)} грн**\n` +
-        `Військовий збір: **${formatCurrency(data.tax_army)} грн**`,
+        `Податок ПДФО: \`${formatCurrency(data.tax_fop)} грн\`\n` +
+        `Військовий збір: \`${formatCurrency(data.tax_army)} грн\``,
         {parse_mode: "Markdown"},
     );
   });
@@ -115,7 +115,7 @@ module.exports = (bot) => {
     const data = await getUserData(docId);
     if (!data) return ctx.reply("Помилка доступу до даних.");
 
-    await ctx.reply(`💰 Сума до виплати: **${formatCurrency(data.sumtopay)} грн**`, {parse_mode: "Markdown"});
+    await ctx.reply(`💰 Сума до виплати: \`${formatCurrency(data.sumtopay)} грн\``, {parse_mode: "Markdown"});
   });
 
   // Кнопка 4: Підтримка
