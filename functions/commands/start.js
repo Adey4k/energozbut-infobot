@@ -88,7 +88,7 @@ module.exports = (bot) => {
     const data = await getUserData(docId);
     if (!data) return ctx.reply("Помилка доступу до даних.");
     await ctx.reply(
-        `Вироблено електроенергії: **${formatCurrency(data.electricity)} грн**\n` +
+        `Вироблено електроенергії: **${formatCurrency(data.electricity)} кВт*г**\n` +
         `Ваше нарахування: **${formatCurrency(data.sum)} грн**`,
         {parse_mode: "Markdown"},
     );
