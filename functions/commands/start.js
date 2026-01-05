@@ -11,7 +11,7 @@ module.exports = (bot) => {
     ["Переглянути нарахування"],
     ["Переглянути податки"],
     ["Сума до виплати"],
-    ["Зв'язатися з підтримкою"],
+    ["Зв'язок з підтримкою"],
   ]).resize();
 
   /**
@@ -74,7 +74,7 @@ module.exports = (bot) => {
     ctx.session = {step: "waiting_contract"};
     await ctx.reply(
         "Добрий день! Вас вітає ТОВ \"ПОЛТАВАЕНЕРГОЗБУТ\".\n\n" +
-        "Для авторизації, будь ласка, введіть **Номер договору**:",
+        "Для авторизації, будь ласка, введіть **Номер договору** (Наприклад \"5123456\"):",
         {parse_mode: "Markdown"},
     );
   });
@@ -147,7 +147,7 @@ module.exports = (bot) => {
     if (ctx.session.step === "waiting_contract") {
       ctx.session.contract = text;
       ctx.session.step = "waiting_account";
-      return ctx.reply("Дякуємо. Тепер введіть **Номер особового рахунку**:", {parse_mode: "Markdown"});
+      return ctx.reply("Дякуємо. Тепер введіть **Номер особового рахунку**(Наприклад \"1234567890\"): ", {parse_mode: "Markdown"});
     }
 
     // КРОК 2
